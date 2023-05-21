@@ -5,10 +5,13 @@ $password = "";
 $dbname = "recordms";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+$myId = $_GET["updateId"];
+
 if($conn->connect_error)
 {
     die("Connection failed: " . $conn->connect_error);
 }
+
 if(isset($_POST["submit"]))
 {
     $fname = $_POST["fname"];
@@ -16,13 +19,13 @@ if(isset($_POST["submit"]))
     $phone = $_POST["phone"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sql = "insert into signup (fname, lname, phone, email, password) values ('$fname','$lname','$phone','$email','$password')";
+    $sql = "update signup set fname='$fname',lname='$lname',phone='$phone',email='$email',password='$password' where id=$myId";
     if($conn->query($sql) === TRUE)
     {
-        echo "Successfully Signup";
+        echo "Successfully Update";
     }
     else{
-        echo "Fail to Signup";
+        echo "Fail to Update";
     }
 }
 $conn->close();
