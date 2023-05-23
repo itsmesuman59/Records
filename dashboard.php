@@ -24,11 +24,9 @@
         </tr>
         <tr>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "recordms";
-$conn = new mysqli($servername, $username, $password, $dbname);
+// error_reporting(E_ERROR | E_PARSE); Helps to hide warning messages
+include 'connection.php';
+
 $filtersearch = $_GET['searchBar'];
 $sql = "select * from signup where concat(id) like '%$filtersearch%' ";
 $result = $conn->query($sql);

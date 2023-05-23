@@ -1,16 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "recordms";
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-$myId = $_GET["updateId"];
-
-if($conn->connect_error)
-{
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connection.php';
 
 if(isset($_POST["submit"]))
 {
@@ -22,7 +11,7 @@ if(isset($_POST["submit"]))
     $sql = "update signup set fname='$fname',lname='$lname',phone='$phone',email='$email',password='$password' where id=$myId";
     if($conn->query($sql) === TRUE)
     {
-        echo "Successfully Update";
+        header("Location: " . "dashboard.php");
     }
     else{
         echo "Fail to Update";

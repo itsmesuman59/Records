@@ -1,12 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "recordms";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if(isset($_GET["updateId"]))
+include 'connection.php';
+if(isset($_GET["deleteId"]))
 {
-    $myId = $_GET['updateId'];
+    $myId = $_GET['deleteId'];
     $sql = "delete from signup where id=$myId";
     if($conn->query($sql) === TRUE)
     {
