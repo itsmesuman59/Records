@@ -1,9 +1,7 @@
 <?php
 include 'connection.php';
-if(isset($_GET["deleteId"]))
-{
     $myId = $_GET['deleteId'];
-    $sql = "delete from signup where id=$myId";
+    $sql = "delete from student where roll=$myId";
     if($conn->query($sql) === TRUE)
     {
         header("Location: " . "dashboard.php");
@@ -11,6 +9,5 @@ if(isset($_GET["deleteId"]))
     else{
         echo "Fail to Delete";
     }
-}
 $conn->close();
 ?>
