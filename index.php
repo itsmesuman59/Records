@@ -29,7 +29,7 @@ if (!empty($errors)) {
       echo $error . "<br>";
     }
   } else {
-    $sql = "select * from signup where id=1";
+    $sql = "select * from signup where email='$email'";
     $result = $conn->query($sql);
     if($result->num_rows>0)
     {
@@ -66,9 +66,9 @@ $conn->close();
 <body>
     <form method="post">
         <label> Email </label>
-        <input type="email" name="email" required> <br>
+        <input for="email" type="email" name="email" required> <br>
         <label> Password </label>
-        <input type="password" name="password" required> <br>
+        <input for="email" type="password" name="password" required> <br>
         <input type="submit" name="submit" value="SIGN IN">
         <button> <a href="signup.php"> SIGN UP </a> </button>
     </form>
