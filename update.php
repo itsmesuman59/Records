@@ -2,7 +2,6 @@
 include 'connection.php';
 
 $myId = $_GET["updateId"];
-echo $myId;
 
 if(isset($_POST["submit"]))
 {
