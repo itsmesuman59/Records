@@ -62,15 +62,26 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form method="post">
-        <label> Email </label>
-        <input for="email" type="email" name="email" required> <br>
-        <label> Password </label>
-        <input for="email" type="password" name="password" required> <br>
-        <input type="submit" name="submit" value="SIGN IN">
-        <button> <a href="signup.php"> SIGN UP </a> </button>
-    </form>
+<div class="signup-container">
+    <div class="signup-form">
+        <div class="signup-form-A">
+            <h1 style="text-align:center; padding-top:25px; text-color:white;">SIGN UP</h1>
+        </div>
+        <div class="signup-form-B">
+            <form method="post" class="myForm">
+                <label for="email"> Email </label><br>
+                <input type="email" name="email" placeholder="Enter your Email" required> <br><br>
+                <label for="password"> Password </label><br>
+                <input type="password" name="password" placeholder="Enter your Password" required> <br><br>
+                <input type="submit" name="submit" value="SIGN IN"> <br> <br>
+                <a href="signup.php"> <input type="button" value="SIGN UP"> </a> <br> <br>
+            </form>
+    </div>
+        <div class="signup-form-C"></div>
+    </div>
+    </div>
 </body>
 </html>

@@ -7,7 +7,8 @@ if(isset($_POST["submit"]))
     $phone = $_POST["phone"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-// Server Side Validation
+
+// Server Side Validation Begin
 $errors = [];
 
 // Validate name
@@ -58,6 +59,8 @@ if (!preg_match('/[A-Z]/', $password)) {
 if (!preg_match('/[a-z]/', $password)) {
     $errors[] = "Password must contain 1 small letter.";
 }
+// Server Side Validation End
+
 // Check for errors
 if (!empty($errors)) {
     // Display errors and redirect back to the form
@@ -96,24 +99,31 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form method="post">
-        <h3> SIGN UP </h3>
-        <labe for="fname"l> First Name </labe>
-        <input type="text" name="fname" required> <br>
-        <labe for="lname"l> Last Name </labe>
-        <input type="text" name="lname" required> <br>
-        <label for="phone"> Phone Number </label>
-        <input type="tel" name="phone" required> <br>
-        <label for="email"> Email </label>
-        <input type="email" name="email" required> <br>
-        <label for="password"> Password </label>
-        <input type="password" name="password" required> <br>
-        <!-- <label> Confirmation Password </label>
-        <input type="password"> <br> -->
-        <input type="submit" name="submit" value="SUBMIT">
-        <button> <a href="index.php"> SIGN IN </a> </button>
-    </form>
+    <div class="signup-container">
+    <div class="signup-form">
+        <div class="signup-form-A">
+            <h1 style="text-align:center; padding-top:25px; text-color:white;">SIGN UP</h1>
+        </div>
+        <div class="signup-form-B">
+            <form method="post" class="myForm">
+                <label for="fname"> First Name </label><br>
+                <input type="text" name="fname" placeholder="Enter your First Name"required> <br><br>
+                <label for="lname"> Last Name </label><br>
+                <input type="text" name="lname" placeholder="Enter your Last Name"required> <br><br>
+                <label for="phone"> Phone Number </label><br>
+                <input type="tel" name="phone" placeholder="Enter your Phone Number"required> <br><br>
+                <label for="email"> Email </label><br>
+                <input type="email" name="email" placeholder="Enter your Email"required> <br><br>
+                <label for="password"> Password </label><br>
+                <input type="password" name="password" placeholder="Enter your Password"required> <br><br>
+                <input type="submit" name="submit" value="SUBMIT">
+            </form>
+    </div>
+        <div class="signup-form-C"></div>
+    </div>
+    </div>
 </body>
 </html>
