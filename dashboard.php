@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="parent">
-<?php include 'header.php' ?>
+<?php include 'include/header.php' ?>
 <div class="mySection">
         <table>
             <tr>
@@ -71,7 +71,6 @@
                             include 'connection.php';
                             if(isset($_POST['submit']))
                             {
-                            echo "Entered !!!";
                             $name = $_POST["name"];
                             $roll = $_POST["roll"];
                             $grade = $_POST["grade"];
@@ -81,7 +80,7 @@
                             if($conn->query($sqlnew) === TRUE)
                             {
                             header("Location: " . "dashboard.php");
-                            echo "Successfully Inserted";
+                            // echo "Successfully Inserted";
                             }
                             else
                             {
@@ -123,7 +122,7 @@
                                 });
                                 </script>
 </div>
-<?php include 'footer.php' ?>
+<?php include 'include/footer.php' ?>
 </div>
 </body>
 </html>
