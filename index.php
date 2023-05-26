@@ -39,6 +39,8 @@ if (!empty($errors)) {
             // echo $row['password'];
             if($email == $row['email'] && $password == $row['password'])
             {
+                session_start();
+                $_SESSION['email'] = $email;
                 header("Location: " . "dashboard.php");
     exit();
             }
@@ -68,7 +70,18 @@ $conn->close();
 <div class="signup-container">
     <div class="signup-form">
         <div class="signup-form-A">
-            <h1 style="text-align:center; padding-top:25px; text-color:white;">SIGN UP</h1>
+            <?php
+            session_start();
+            if(isset($_SESSION['email']))
+            {
+                // echo "Data Exist";
+                // echo $_SESSION['email'];
+            }
+            else{
+                // echo "Please log in to continue";
+            }
+            ?>
+            <h1 style="text-align:center; padding-top:25px; text-color:white;">SIGN IN</h1>
         </div>
         <div class="signup-form-B">
             <form method="post" class="myForm">
