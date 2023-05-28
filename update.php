@@ -31,7 +31,7 @@ $conn->close();
 </head>
 <body>
     <form method="post">
-        <h3> SIGN UP </h3>
+        <h3> UPDATE </h3>
         <label> Name </label>
         <input type="text" name="name"> <br>
         <label> Roll </label>
@@ -42,8 +42,8 @@ $conn->close();
         <input type="tel" name="phone"> <br>
         <label> Address </label>
         <input type="text" name="address"> <br>
-        <input type="submit" name="submit" value="SUBMIT">
-        <button> <a href="index.php"> SIGN IN </a> </button>
+        <input type="submit" name="submit" value="Update">
+        <button> <a href="dashboard.php"> Back </a> </button>
     </form>
 </body>
 </html>

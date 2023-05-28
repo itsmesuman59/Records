@@ -44,7 +44,7 @@ if (!empty($errors)) {
                 $_SESSION['fname'] = $row['fname'];
                 $_SESSION['lname'] = $row['lname'];
                 $_SESSION['start'] = time();
-                $_SESSION['expire'] = $_SESSION['start'] + (1*5);
+                $_SESSION['expire'] = $_SESSION['start'] + (1*180);
                 header("Location: " . "dashboard.php");
     exit();
             }
